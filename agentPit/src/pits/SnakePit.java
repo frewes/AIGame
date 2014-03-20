@@ -3,14 +3,18 @@ package pits;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import GUI.GUI;
+import gameMaster.GameBase;
+import gameMaster.Player;
 import helpers.Point;
 import agents.FredSnake;
 import agents.Snake;
 
-public class SnakePit implements Pit {
+public class SnakePit implements Pit ,GameBase{
 
 	public static final int LEFT = 1;
 	public static final int RIGHT = 2;
@@ -27,6 +31,9 @@ public class SnakePit implements Pit {
 	private int[][] grid;
 	private int size;
 
+	public SnakePit(){
+		this(10);
+	}
 	public SnakePit(int gridSize) {
 		size = gridSize;
 		grid = new int[gridSize][gridSize];
@@ -120,6 +127,27 @@ public class SnakePit implements Pit {
 	@Override
 	public String getEndMessage() {
 		return "A snake has died.  You ate " + getScore() + " apples.";
+	}
+
+	@Override
+	public void init(List<Player> players) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean progress() {
+		return step();
+	}
+
+	@Override
+	public Map<Player, Integer> score() {
+		return null;
+	}
+
+	@Override
+	public int numPlayersPerGame() {
+		return 1;
 	}
 
 }

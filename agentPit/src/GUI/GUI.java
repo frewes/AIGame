@@ -60,7 +60,7 @@ public class GUI {
 		JSpinner gSpin = new JSpinner(new SpinnerNumberModel(50, 3, 1000, 1));
 		JSpinner tSpin = new JSpinner(new SpinnerNumberModel(8, 1, 100, 1));
 		String[] pits = { "Snake", "Snakes", "Physics"};
-		JComboBox<String> games = new JComboBox<String>(pits);
+		JComboBox games = new JComboBox(pits);
 
 		c.gridwidth = 2;
 		panel.add(new JLabel("Shall we play a game?"), c);

@@ -3,14 +3,18 @@ package pits;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import GUI.GUI;
+import gameMaster.GameBase;
+import gameMaster.Player;
 import helpers.Point;
 import agents.DuelSnakeBlue;
 import agents.DuelSnakeRed;
 
-public class MultiSnakePit implements Pit {
+public class MultiSnakePit implements Pit ,GameBase{
 
 	public static final int LEFT = 1;
 	public static final int RIGHT = 2;
@@ -33,6 +37,10 @@ public class MultiSnakePit implements Pit {
 	private int size;
 	private boolean redDead = false;
 	private boolean blueDead = false;
+	
+	public MultiSnakePit(){
+		this(10);
+	}
 	
 	public MultiSnakePit(int gridSize) {
 		size = gridSize;
@@ -190,6 +198,28 @@ public class MultiSnakePit implements Pit {
 			s += "so it's a tie!";
 		}
 		return s;
+	}
+
+	@Override
+	public void init(List<Player> players) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean progress() {
+		return step();
+	}
+
+	@Override
+	public Map<Player, Integer> score() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int numPlayersPerGame() {
+		return 2;
 	}
 
 }

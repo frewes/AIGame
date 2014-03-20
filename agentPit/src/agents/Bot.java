@@ -1,8 +1,9 @@
 package agents;
 
+import gameMaster.Player;
 import helpers.Point;
 
-public class Bot {
+public class Bot implements Player{
 
 	public double leftSpeed = 0;
 	public double rightSpeed = 0;
@@ -12,6 +13,12 @@ public class Bot {
 	}
 	
 	public void setSpeed(Point center, Point ball, double angle) {
+		
+	}
+
+	@Override
+	public void init() {
+		// TODO Auto-generated method stub
 		
 	}
 	

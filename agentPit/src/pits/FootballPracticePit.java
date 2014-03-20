@@ -3,17 +3,25 @@ package pits;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
+import java.util.List;
+import java.util.Map;
 
+import gameMaster.GameBase;
+import gameMaster.Player;
 import helpers.Bicell;
 import helpers.Diff;
 import helpers.Particle;
 import helpers.Point;
 import GUI.GUI;
 
-public class FootballPracticePit implements Pit {
+public class FootballPracticePit implements Pit ,GameBase{
 	
 	private int size;
 	private Bicell b;
+	
+	public FootballPracticePit(){
+		this.size = 10;
+	}
 	
 	public FootballPracticePit(int gridSize) {
 		this.size = gridSize;
@@ -58,6 +66,28 @@ public class FootballPracticePit implements Pit {
 	@Override
 	public String getEndMessage() {
 		return "Physics broked";
+	}
+
+	@Override
+	public void init(List<Player> players) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean progress() {
+		return step();
+	}
+
+	@Override
+	public Map<Player, Integer> score() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int numPlayersPerGame() {
+		return 1;
 	}
 
 }
