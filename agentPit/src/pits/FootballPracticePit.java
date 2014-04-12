@@ -11,6 +11,7 @@ import gameMaster.Player;
 import helpers.Bicell;
 import helpers.Diff;
 import helpers.Particle;
+import helpers.Pit;
 import helpers.Point;
 import GUI.GUI;
 
@@ -20,7 +21,7 @@ public class FootballPracticePit implements Pit ,GameBase{
 	private Bicell b;
 	
 	public FootballPracticePit(){
-		this.size = 10;
+		this(10);
 	}
 	
 	public FootballPracticePit(int gridSize) {
@@ -76,7 +77,7 @@ public class FootballPracticePit implements Pit ,GameBase{
 
 	@Override
 	public boolean progress() {
-		return step();
+		return step() && false;
 	}
 
 	@Override

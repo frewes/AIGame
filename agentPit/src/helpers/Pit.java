@@ -1,6 +1,6 @@
 /** DO NOT MODIFY **/
 
-package pits;
+package helpers;
 
 import java.awt.Component;
 import java.awt.Graphics;

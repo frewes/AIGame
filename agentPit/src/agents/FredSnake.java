@@ -2,7 +2,7 @@ package agents;
 
 import java.util.LinkedList;
 
-import pits.Pit;
+import helpers.Pit;
 import helpers.Point;
 
 public class FredSnake {	

@@ -19,8 +19,11 @@ public class GameMaster {
 		for(String name : GameTracker.getNames()){
 			
 			GameBase game = GameTracker.getGames(name);
+			System.out.print(name );
 			int nppg = game.numPlayersPerGame();
 			int np = PlayerTracker.playerList().length;
+			
+			System.out.println(" " + nppg+ "," + np);
 			
 			String[] players = PlayerTracker.playerList();
 			if(np > nppg){
@@ -35,6 +38,7 @@ public class GameMaster {
 				for(int i=0;i<nppg;i++){
 					mask[i] = i;
 				}
+				
 				//scroll draw here
 				boolean done = false;
 				while(!done){
@@ -57,21 +61,24 @@ public class GameMaster {
 					}
 				}
 				//DRAW COMPLETE HERE
-				
+				System.out.println("Draw done " + draw.size());
 				for(List<Integer>i:draw){
 					List<Player> labrats = new LinkedList<Player>();
 					for(int j=0;j<nppg;j++){
 						labrats.add(PlayerTracker.creator(players[i.get(j)]));
 					}
+					System.out.println("Game: " + i);
 					game.init(labrats);
 					while(game.progress());
 					Map<Player,Integer> score = game.score();
-					for(Entry<Player,Integer> j:score.entrySet()){
-						String n = j.getKey().getClass().getName();
-						gameScore.put(n, gameScore.get(n)+ j.getValue());
+					if(score != null){
+						for(Entry<Player,Integer> j:score.entrySet()){
+							String n = j.getKey().getClass().getName();
+							gameScore.put(n, gameScore.get(n)+ j.getValue());
+						}
 					}
 				}
-				
+				System.out.println("Game done");
 				//Games done now append scores to table
 				for(Entry<String,Integer>i:gameScore.entrySet()){
 					scores.get(i.getKey()).add(i.getValue());

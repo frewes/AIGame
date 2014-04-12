@@ -10,6 +10,7 @@ import java.util.Random;
 import GUI.GUI;
 import gameMaster.GameBase;
 import gameMaster.Player;
+import helpers.Pit;
 import helpers.Point;
 import agents.DuelSnakeBlue;
 import agents.DuelSnakeRed;

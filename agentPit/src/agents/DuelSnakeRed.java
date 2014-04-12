@@ -1,6 +1,6 @@
 package agents;
 
-import pits.Pit;
+import helpers.Pit;
 import helpers.Point;
 
 public class DuelSnakeRed {

@@ -4,8 +4,8 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+import helpers.Pit;
 import helpers.Point;
-import pits.Pit;
 
 public class Map {
 

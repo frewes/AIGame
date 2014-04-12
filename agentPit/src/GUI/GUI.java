@@ -3,6 +3,8 @@
 //TODO: Fix the closing condition.
 package GUI;
 
+import helpers.Pit;
+
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -26,7 +28,6 @@ import javax.swing.event.ChangeListener;
 
 import pits.MultiSnakePit;
 import pits.FootballPracticePit;
-import pits.Pit;
 import pits.SnakePit;
 
 public class GUI {

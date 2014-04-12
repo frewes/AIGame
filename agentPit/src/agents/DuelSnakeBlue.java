@@ -1,7 +1,7 @@
 package agents;
 
-import pits.Pit;
 import gameMaster.Player;
+import helpers.Pit;
 import helpers.Point;
 
 public class DuelSnakeBlue implements Player{

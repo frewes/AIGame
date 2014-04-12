@@ -1,7 +1,7 @@
 package agents;
 
+import helpers.Pit;
 import helpers.Point;
-import pits.Pit;
 
 public class Snake {
 

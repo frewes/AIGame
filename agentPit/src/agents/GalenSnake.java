@@ -2,8 +2,8 @@ package agents;
 
 import java.util.LinkedList;
 
+import helpers.Pit;
 import helpers.Point;
-import pits.Pit;
 
 public class GalenSnake {
 
